@@ -1,4 +1,3 @@
-#!/bin/sh
 cd src
 
 VERSION=$(cat manifest.json | grep '"version":' | cut -d '"' -f 4)
