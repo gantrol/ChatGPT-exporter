@@ -81,30 +81,18 @@ function removeButtons() {
 }
 
 function addActionsButtons(actionsArea, TryAgainButton) {
-  const downloadButton = TryAgainButton.cloneNode(true);
-  downloadButton.id = "download-png-button";
-  downloadButton.setAttribute("share-ext", "true");
-  downloadButton.innerText = "Generate PNG";
-  downloadButton.onclick = () => {
-    downloadThread();
-  };
-  actionsArea.appendChild(downloadButton);
-  const downloadPdfButton = TryAgainButton.cloneNode(true);
-  downloadPdfButton.id = "download-pdf-button";
-  downloadButton.setAttribute("share-ext", "true");
-  downloadPdfButton.innerText = "Download PDF";
-  downloadPdfButton.onclick = () => {
-    downloadThread({ as: Format.PDF });
-  };
-  actionsArea.appendChild(downloadPdfButton);
-  const exportHtml = TryAgainButton.cloneNode(true);
-  exportHtml.id = "download-html-button";
-  downloadButton.setAttribute("share-ext", "true");
-  exportHtml.innerText = "Share Link";
-  exportHtml.onclick = () => {
-    sendRequest();
-  };
-  actionsArea.appendChild(exportHtml);
+  const cloneButton = (name, onclick, text = `Generate ${name}`) => {
+    const downloadButton = TryAgainButton.cloneNode(true);
+    downloadButton.id = `download-${name}-button`;
+    downloadButton.setAttribute("share-ext", "true");
+    downloadButton.innerText = text;
+    downloadButton.onclick = onclick
+    actionsArea.appendChild(downloadButton);
+  }
+
+  cloneButton('png', downloadThread);
+  cloneButton('pdf', () => downloadThread({ as: Format.PDF }));
+  cloneButton('html', sendRequest, "Share Link")
 }
 
 function downloadThread({ as = Format.PNG } = {}) {
@@ -140,11 +128,6 @@ function handleImg(imgData) {
   const url = URL.createObjectURL(blob);
 
   window.open(url, "_blank");
-
-  //   const a = document.createElement("a");
-  //   a.href = url;
-  //   a.download = "chat-gpt-image.png";
-  //   a.click();
 }
 
 function handlePdf(imgData, canvas, pixelRatio) {
@@ -159,20 +142,6 @@ function handlePdf(imgData, canvas, pixelRatio) {
   pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
   pdf.save("chat-gpt.pdf");
 }
-
-// async function getWidthHeightFromBase64(base64Img) {
-//   return new Promise((resolve, reject) => {
-//     // Then, create a new Image from the blob
-//     const img = new Image();
-//     img.src = base64Img;
-
-//     img.onload = () => {
-//       const width = img.width;
-//       const height = img.height;
-//       resolve({ width, height });
-//     };
-//   });
-// }
 
 class Elements {
   constructor() {
