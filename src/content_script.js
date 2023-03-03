@@ -64,12 +64,14 @@ function getName() {
     return name.replace(/[/\\?%*:|"<>]/g, '');
 }
 
+// modified from: https://github.com/lencx/ChatGPT
 function setIcon(type) {
     return {
         markdown: `<svg class="chatappico md" viewBox="0 0 1024 1024" width="20" height="20"><path d="M128 128h768a42.666667 42.666667 0 0 1 42.666667 42.666667v682.666666a42.666667 42.666667 0 0 1-42.666667 42.666667H128a42.666667 42.666667 0 0 1-42.666667-42.666667V170.666667a42.666667 42.666667 0 0 1 42.666667-42.666667z m170.666667 533.333333v-170.666666l85.333333 85.333333 85.333333-85.333333v170.666666h85.333334v-298.666666h-85.333334l-85.333333 85.333333-85.333333-85.333333H213.333333v298.666666h85.333334z m469.333333-128v-170.666666h-85.333333v170.666666h-85.333334l128 128 128-128h-85.333333z" p-id="1381" fill="currentColor"></path></svg>`,
     }[type];
 }
 
+// modified from: https://github.com/lencx/ChatGPT
 async function exportMarkdown() {
     const content = Array.from(document.querySelectorAll("main >div>div>div>div")).map(i => {
         let j = i.cloneNode(true);
@@ -96,6 +98,7 @@ async function exportMarkdown() {
     downloadAnchorNode.remove();
 }
 
+// copy from: https://github.com/lencx/ChatGPT
 var ExportMD = (function () {
     if (!TurndownService || !turndownPluginGfm) return;
     const hljsREG = /^.*(hljs).*(language-[a-z0-9]+).*$/i;

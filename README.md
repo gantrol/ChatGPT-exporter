@@ -1,49 +1,30 @@
-# ChatGPT Export and Share
-> A Chrome extension for downloading your ChatGPT history to PNG, PDF or creating a sharable link
-<br/>
+# ChatGPT Markdown Exporter
 
-![gpt4](https://user-images.githubusercontent.com/7003853/205509643-2283f0fe-3643-4b74-98f6-a0f2489d75ef.gif)
+> 为 ChatGPT 导出 Markdown 的浏览器插件
 
-## Why did I build it
-When you want to share some of your chats, it's very difficult to snapshot the entire chat. This will add the functionality of exporting it to an image, a PDF file, or create a sharable link.
+[![en](https://img.shields.io/badge/Readme-English-blue.svg?style=for-the-badge&logo=appveyor)](README.en.md)
 
-## How to install it
+## 安装
 
-### Install to Chrome/Edge
+### Chrome/Edge 安装
 
-1. Download `chrome-chatgpt-share.zip` from the latest release in [releases page](https://github.com/liady/ChatGPT-pdf/releases).
-2. Unzip the downloaded file to extract the extension files.
-3. In Chrome/Edge go to the extensions page (`chrome://extensions` or `edge://extensions`).
-4. Enable Developer mode by clicking the toggle switch in the top right corner of the page.
-5. Click the `Load unpacked` button and select the directory where you unzipped the extension files.
-6. ChatGPT Export should now be installed and active on the ChatGPT website (https://chat.openai.com/chat).
+1. 从 [发布页面](https://github.com/gantrol/ChatGPT-exporter/releases/tag/v1) 下载 `chrome-chatgpt-share.zip` 文件。
+2. 解压下载的文件以提取扩展文件。
+3. 在 Chrome/Edge 中进入扩展程序页面（`chrome://extensions` 或 `edge://extensions`）。
+4. 在页面右上角点击切换开关，启用开发者模式。
+5. 点击 `加载已解压的扩展程序` 按钮并选择您解压扩展文件的目录。
+6. ChatGPT Markdown 现在已经安装并在 [ChatGPT 网站](https://chat.openai.com/chat) 上处于活动状态。
 
-### Install to Firefox
+### Firefox 安装
 
-1. Download `firefox-chatgpt-share.zip` from the latest release in [releases page](https://github.com/liady/ChatGPT-pdf/releases).
-3. Go to `about:debugging`, click "This Firefox" on the sidebar.
-4. Click "Load Temporary Add-on" button, then select the zipped file.
-5. ChatGPT Export should now be installed and active on the ChatGPT website (https://chat.openai.com/chat).
+1. 从 [发布页面](https://github.com/gantrol/ChatGPT-exporter/releases/tag/v1) 下载 `firefox-chatgpt-share.zip` 文件。
+2. 进入 `about:debugging` 页面，点击侧边栏上的 `This Firefox`。
+3. 点击 `Load Temporary Add-on` 按钮，然后选择压缩文件。
+4. ChatGPT Markdown 现在已经安装并在 [ChatGPT 网站](https://chat.openai.com/chat) 上处于活动状态。
 
-## How to use it
 
-After chatting with ChatGPT, you will notice new buttons at the bottom of the page (next to "Try Again"):
-<br/><br/>
-<img width="761" alt="image" src="https://user-images.githubusercontent.com/7003853/205524669-6e40f151-d544-4054-a9e5-c05f3dec57a2.png">
-<br/><br/>
-Look for them at the bottom of the page:
-<br/><br/>
-<img width="922" alt="image" src="https://user-images.githubusercontent.com/7003853/205524690-d2facc95-56ee-43ed-9413-be200f4f57b3.png">
+## 参考项目
 
-Click them to generate a PNG, download a PDF or create a HTML of the entire chat:
-<br/>
-<center><img height="600" alt="Arrows2" src="https://user-images.githubusercontent.com/7003853/205508289-fb56f028-021e-4ca5-8dc4-a65626888760.png"></center>
-
-## Roadmap
-- [X] Support Firefox
-- [ ] Allow choosing resolution / file size
-- [ ] Allow splitting to smaller partial images (for Twitter, for example)
-
-## Contribution
-Thanks [adrianmarinwork](https://github.com/adrianmarinwork) for fixing issues.
-PRs welcome!
+v1主要参考了：
+- https://github.com/liady/ChatGPT-pdf
+- https://github.com/lencx/ChatGPT  中的导出功能
